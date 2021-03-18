@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            font-family: cursive;
+        }
+
+        form{
+            /* border: 3px solid whitesmoke; */
+            padding-bottom: 80px;
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-top: 55px;
+            padding-top: 0px;
+            box-shadow: 0px 1px 10px 1px #000;
+        }
+
+        .avatar{
+            width: 180px;
+            border-radius: 50%;
+            margin-top: 10px;
+
+        }
+
+        .imgcontainer{
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        .container{
+            margin: 10px 0 10px 0;
+        }
+
+        .lb1{
+            margin-left: 449px;
+        }
+
+        input[type=text], input[type=password]{
+            display: block;
+            width: 20%;
+            padding: 12px;
+            margin-left: 376px;
+        }
+
+        .login{
+            margin-left: 455px;
+            margin-top: 10px;
+            display: block;
+            background-color: skyblue;
+            border: 0px;
+            width: 64px;
+            transition: all;
+            font-family: monospace;
+            text-align: center;
+            padding: 4px 0px 4px 0px;
+        }
+
+        .login:hover{
+            cursor: pointer;
+            background-color: teal;
+            opacity: 0.89;
+            transition-duration: 1s;
+        }
+
+        .container2{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .container2 label a{
+            text-decoration: none;
+            color: black;
+            transition: all;
+        }
+
+        .container2 label a:hover{
+            color: teal;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+    <form name='login'>
+        <div class="imgcontainer">
+          <img src="/img/login.jpg" alt="Avatar" class="avatar">
+        </div>
+      
+        <div class="container">
+          <label for="uname" class="lb1"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+      
+          <label for="psw" class="lb1"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="pswd" required>
+      
+          <button type="submit" class="login" onclick="check(this.form)">Login</button>
+        </div>
+        
+        <div class="container2">
+            <label>
+              <input type="checkbox" name="remember"> Remember me
+            </label>
+            <label>Forgot <a href="#" id='service' onclick="service()">password?</a></label>
+        </div>
+      </form>
+
+      <script>
+          function check(form){
+              if(form.uname.value == 'admin' && form.pswd.value == 'admin'){
+                 window.open('target.html');
+              }
+              else{
+                  alert("Oh! wrong entries :(");
+              }
+          }
+
+          function service(){
+              alert("This service is not available yet")
+          }
+
+      </script>
+</body>
+</html>
